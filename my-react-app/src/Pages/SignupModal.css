@@ -1,0 +1,22 @@
+/* styles.css veya component CSS dosyanızda */
+.form-control {
+    background-color: #1a1a1a;
+    color: white;
+    border: 1px solid #444;
+    transition: border-color 0.3s, box-shadow 0.3s;
+  }
+  
+  .form-control:focus {
+    border-color: #1d9bf0;
+    box-shadow: 0 0 0 2px rgba(29, 155, 240, 0.5);
+  }
+  
+  .form-control::placeholder {
+    color: #6c757d;
+    transition: all 0.3s;
+  }
+  
+  .form-control:focus::placeholder {
+    color: transparent;
+  }
+  
