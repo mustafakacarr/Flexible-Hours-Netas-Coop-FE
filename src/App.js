@@ -1,11 +1,14 @@
 import React from 'react';
-
+import Home from './Pages/Home';
+import SignupModal from './Pages/SignupModal';
 
 function App() {
   return (
-   <div className = 'fs-5'>
-    text  
-   </div>
+    <div className="App">
+      <Home />
+      <SignupModal />
+      {/* Diğer bileşenleri buraya ekleyin */}
+    </div>
   );
 }
 
