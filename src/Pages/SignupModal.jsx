@@ -5,7 +5,7 @@ function SignupModal({ show, handleClose }) {
   return (
     <div className={`modal ${show ? 'd-block' : 'd-none'}`} tabIndex="-1" role="dialog">
       <div className="modal-dialog modal-dialog-centered" role="document">
-        <div className="modal-content bg-black text-white">
+        <div className="modal-content bg-black text-white ">
           <div className="modal-header bg-black border-0">
             <h5 className="modal-title text-white">Hesap Oluştur</h5>
             <button type="button" className=" position-absolute top-0 end-0 m-3" aria-label="Close" onClick={handleClose}>
