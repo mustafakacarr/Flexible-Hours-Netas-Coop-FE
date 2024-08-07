@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css'; // Ensure Bootstrap CSS is imported
-import './Style.css';
+import '../Pages/Style.css';
 
 function SignupModal({ show, handleClose }) {
   const [formData, setFormData] = useState({

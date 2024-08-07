@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import ForgotPasswordModal from './ForgotPasswordModal'; // Dosya yolunu ve adını doğru yazın
+import ForgotPasswordModal from '../Pages/ForgotPasswordModal'; // Dosya yolunu ve adını doğru yazın
 
 function SigninModal({ show, handleClose }) {
   const [forgotPasswordShow, setForgotPasswordShow] = useState(false);
