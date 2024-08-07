@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import SignupModal from './SignupModal';
-import SigninModal from './SigninModal';
 
-function Home() {
+import SignupModal from '../Components/SignupModal';
+import SigninModal from '../Components/SigninModal';
+const Home = () => {
   const [showSignupModal, setShowSignupModal] = useState(false);
   const [showSigninModal, setShowSigninModal] = useState(false);
 
