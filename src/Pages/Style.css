@@ -1,0 +1,41 @@
+/* Background color for custom red elements */
+.bg-custom-red {
+    background-color: #b50202;
+  }
+  
+  /* Custom button style */
+  .btn-custom {
+    background: linear-gradient(90deg, #e10b0b, #e10b0b); /* Gradient color */
+    border: none;
+    color: #fff;
+    padding: 12px 24px; /* Ample padding */
+    font-size: 1rem;
+    font-weight: 700; /* Bold font */
+    text-transform: uppercase;
+    border-radius: 30px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Soft shadow */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  }
+  
+  .btn-custom:hover {
+    background: linear-gradient(90deg, #eaeaea, #eaeaea); /* Slightly lighter gradient on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Enhanced shadow */
+    transform: translateY(-2px); /* Lift effect */
+  }
+  
+  
+  /* Custom button color */
+.btn-danger {
+    background-color: #e10b0b;
+    border-color: #e10b0b;
+  }
+  
+  .btn-danger:hover {
+    background-color: #ad1111; /* Slightly darker red for hover */
+    border-color: #c00a0a;
+  }
+  
+  .btn-danger:focus, .btn-danger.focus {
+    box-shadow: 0 0 0 0.2rem rgba(255, 0, 0, 0.5);
+  }
+  
