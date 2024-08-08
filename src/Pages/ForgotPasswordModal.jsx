@@ -9,7 +9,7 @@ function ForgotPasswordModal({ show, handleClose }) {
           <div className="modal-header bg-light border-0">
             <h5 className="modal-title text-dark">Şifrenizi mi Unuttunuz?</h5>
             <button type="button" className="btn-close" aria-label="Close" onClick={handleClose}>
-              <span aria-hidden="true">&times;</span>
+              
             </button>
           </div>
           <div className="modal-body">
