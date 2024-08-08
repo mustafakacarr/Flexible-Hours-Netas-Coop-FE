@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import SignupModal from '../Components/SignupModal';
-import SigninModal from '../Components/SigninModal';
+import SignupModal from '../Components/Modals/SignupModal';
+import SigninModal from '../Components/Modals/SigninModal';
 
 const Home = () => {
   const [showSignupModal, setShowSignupModal] = useState(false);
