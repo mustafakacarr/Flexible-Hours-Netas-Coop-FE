@@ -1,28 +1,19 @@
 import React, { useState } from 'react';
-import DatePicker from 'react-datepicker';
-import 'react-datepicker/dist/react-datepicker.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from '../Components/Layout/Navbar';
+import { Calendar, momentLocalizer } from 'react-big-calendar';
+import moment from 'moment';
+import 'react-big-calendar/lib/css/react-big-calendar.css';
+
+// Takvim için yerelleştirici (localizer) ayarlama
+const localizer = momentLocalizer(moment);
 
 function MainPage() {
-  const [startDate, setStartDate] = useState(new Date());
-  const [endDate, setEndDate] = useState(new Date());
-
-  const handleStartChange = (date) => {
-    setStartDate(date);
-  };
-
-  const handleEndChange = (date) => {
-    setEndDate(date);
-  };
+  const [events, setEvents] = useState([]); // Etkinlikler için state
+  const [currentDate, setCurrentDate] = useState(new Date());
 
   const handleYearChange = (increment) => {
-    setStartDate(new Date(startDate.setFullYear(startDate.getFullYear() + increment)));
-    setEndDate(new Date(endDate.setFullYear(endDate.getFullYear() + increment)));
-  };
-
-  const handleListeleClick = () => {
-    console.log('Listele button clicked');
+    setCurrentDate(new Date(currentDate.setFullYear(currentDate.getFullYear() + increment)));
   };
 
   return (
@@ -31,34 +22,6 @@ function MainPage() {
       <div className="container-fluid p-5" style={{ backgroundColor: '#F2EFF8' }}>
         <div className="row justify-content-center">
           <div className="col-md-8">
-            <div className="row mb-3">
-              <div className="col">
-                <label className="form-label">Başlangıç</label>
-                <div className="input-group">
-                  <DatePicker
-                    selected={startDate}
-                    onChange={handleStartChange}
-                    className="form-control"
-                    dateFormat="dd/MM/yyyy"
-                    placeholderText="DD/MM/YYYY"
-                  />
-                  <span className="input-group-text"><i className="bi bi-calendar"></i></span>
-                </div>
-              </div>
-              <div className="col">
-                <label className="form-label">Bitiş</label>
-                <div className="input-group">
-                  <DatePicker
-                    selected={endDate}
-                    onChange={handleEndChange}
-                    className="form-control"
-                    dateFormat="dd/MM/yyyy"
-                    placeholderText="DD/MM/YYYY"
-                  />
-                  <span className="input-group-text"><i className="bi bi-calendar"></i></span>
-                </div>
-              </div>
-            </div>
             <div className="row justify-content-center">
               <div className="col-auto">
                 <button 
@@ -76,80 +39,36 @@ function MainPage() {
               </div>
             </div>
             <div className="row justify-content-center mt-4">
-              <div className="col-auto">
-                <button 
-                  className="btn btn-outline-primary mx-2"
-                  onClick={handleListeleClick}
-                >
-                  Listele
-                </button>
-                <button 
-                  className="btn btn-outline-primary mx-2"
-                >
-                  Düzenle
-                </button>
-                <button 
-                  className="btn btn-outline-primary mx-2"
-                >
-                  Rapor Oluştur
-                </button>
-              </div>
-            </div>
-            <div className="row justify-content-center mt-4">
-              <div className="col text-center">
-                <div className="calendar-container">
-                  <DatePicker
-                    selected={startDate}
-                    onChange={handleStartChange}
-                    startDate={startDate}
-                    endDate={endDate}
-                    selectsRange
-                    inline
-                    calendarClassName="custom-calendar"
-                    highlightDates={[
-                      {
-                        "react-datepicker__day--highlighted-start": [startDate],
-                        "react-datepicker__day--highlighted-end": [endDate],
-                        "react-datepicker__day--highlighted-middle": [startDate, endDate],
-                      }
-                    ]}
-                  />
-                </div>
+              <div className="col">
+                <Calendar
+                  localizer={localizer}
+                  events={events} // Etkinlik listesi
+                  startAccessor="start"
+                  endAccessor="end"
+                  style={{ height: 500 }}
+                  views={['month', 'week', 'day']}
+                  step={60}
+                  showMultiDayTimes
+                  selectable
+                  date={currentDate}
+                  onNavigate={(date) => setCurrentDate(date)}
+                  onSelectEvent={(event) => alert(event.title)}
+                  onSelectSlot={(slotInfo) => {
+                    const title = prompt('Etkinlik Başlığı:');
+                    if (title) {
+                      setEvents([...events, {
+                        start: slotInfo.start,
+                        end: slotInfo.end,
+                        title,
+                      }]);
+                    }
+                  }}
+                />
               </div>
             </div>
           </div>
         </div>
       </div>
-
-      <style jsx>{`
-        
-        .custom-calendar .react-datepicker__day--highlighted-start {
-          background-color: purple;
-          color: white;
-        }
-
-        .custom-calendar .react-datepicker__day--highlighted-middle,
-        .custom-calendar .react-datepicker__day--highlighted-end {
-          background-color: #F2EFF8;
-          color: #333;
-        }
-
-        .custom-calendar {
-          transform: scale(1.2); /* Takvimi büyüt */
-          max-width: 600px; /* Genişliği artır */
-          margin: auto;
-        }
-
-        .custom-calendar .react-datepicker__day,
-        .custom-calendar .react-datepicker__header {
-          font-size: 0.8em; 
-        }
-
-       
-        .calendar-container {
-          margin-top: 20px;
-        }
-      `}</style>
     </>
   );
 }
