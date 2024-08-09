@@ -90,9 +90,10 @@ function SignupModal({ show, handleClose }) {
                   onChange={handleChange}
                 >
                   <option value="">Bölümünüzü Seçiniz</option>
-                  <option value="b1">Bölüm 1</option>
-                  <option value="b2">Bölüm 2</option>
-                  <option value="b3">Bölüm 3</option>
+                  <option value="b1">Teknoloji Yönetişimi ve Veri Teknolojileri</option>
+                  <option value="b2">Dijital Ödemeler Operayonları</option>
+                  <option value="b3">Ödeme Sistemleri Teknolojileri Bölümü-1</option>
+                  
                 </select>
               </div>
               <div className="form-group mb-3">
@@ -104,9 +105,10 @@ function SignupModal({ show, handleClose }) {
                   onChange={handleChange}
                 >
                   <option value="">Müdürlüğünüzü Seçiniz</option>
-                  <option value="m1">Müdürlük 1</option>
-                  <option value="m2">Müdürlük 2</option>
-                  <option value="m3">Müdürlük 3</option>
+                  <option value="m1">Teknoloji Çevik Yönetişimi</option>
+                  <option value="m2">Ödeme Sistmeleri</option>
+                  <option value="m3">Pos Uygulamları Alt Gr</option>
+                  <option value="m4">Pos Uygulamları Alt Gr</option>
                 </select>
               </div>
               <div className="form-group mb-3">
