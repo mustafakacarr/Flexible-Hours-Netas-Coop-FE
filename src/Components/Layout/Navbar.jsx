@@ -6,7 +6,7 @@ function Navbar() {
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container-fluid justify-content-center">
         <Link className="navbar-brand mx-4" to="/">
-          MyApp
+          Esnek Çalışma Saatleri
         </Link>
         <button
           className="navbar-toggler"
