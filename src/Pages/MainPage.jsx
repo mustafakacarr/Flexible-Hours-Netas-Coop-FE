@@ -122,13 +122,12 @@ function MainPage() {
       </div>
 
       <style jsx>{`
-        /* İlk seçilen tarihi mor yap */
+        
         .custom-calendar .react-datepicker__day--highlighted-start {
           background-color: purple;
           color: white;
         }
 
-        /* Sonraki seçilen tarihleri lila yap */
         .custom-calendar .react-datepicker__day--highlighted-middle,
         .custom-calendar .react-datepicker__day--highlighted-end {
           background-color: #F2EFF8;
@@ -143,10 +142,10 @@ function MainPage() {
 
         .custom-calendar .react-datepicker__day,
         .custom-calendar .react-datepicker__header {
-          font-size: 0.8em; /* Takvim içindeki metinlerin font boyutunu küçült */
+          font-size: 0.8em; 
         }
 
-        /* Butonlar ile takvim arasına boşluk ekle */
+       
         .calendar-container {
           margin-top: 20px;
         }
